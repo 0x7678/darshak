@@ -12,9 +12,12 @@ public interface Constants {
 
 	String MODEL_S2 = "GT-I9100";
 	String MODEL_S3 = "GT-I9300";
-
+	String MODEL_POCKET_NEO = "GT-S5310"; //aka Samsung Pocket Neo
+	
 	String LOG_FILE_S3_PREFIX = "CPLOG_ISTP_TRACE";
 	String LOG_FILE_S2_PREFIX = "MA_TRACE_";
+	String LOG_FILE_NEO_PREFIX = "log_mtt_";
+	
 	String LOG_FILE_S2_PREFIX_AENAES = "AENEAS_TRACE_";
 	String LOG_FILE_XGS_PREFIX = "xgs.";
 
