@@ -88,6 +88,13 @@ public class Utils {
 		FilenameFilter filter = new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String filename) {
+				if (Build.MODEL.equals(Constants.MODEL_POCKET_NEO)) {
+                    			if (filename.startsWith(Constants.LOG_FILE_NEO_PREFIX)) {
+                        			Log.d(LOG_TAG, "match: " + Constants.LOG_FILE_NEO_PREFIX
+                                				+ ": " + filename);
+                        			return true;
+                    			}
+                		}
 				if (Build.MODEL.equals(Constants.MODEL_S3)) {
 					if (filename.startsWith(Constants.LOG_FILE_S3_PREFIX)) {
 						Log.d(LOG_TAG, "match: " + Constants.LOG_FILE_S3_PREFIX
@@ -140,7 +147,10 @@ public class Utils {
 	public static boolean isGalaxyS2() {
 		return Build.MODEL.equals(Constants.MODEL_S2);
 	}
-
+	public static boolean isSamsungPocketNeo() {
+        	return Build.MODEL.equals(Constants.MODEL_POCKET_NEO);
+    	}
+	
 	public static boolean isSupportedModel() {
 		if (Build.MODEL.equals(Constants.MODEL_S2)) {
 			return true;
@@ -148,6 +158,9 @@ public class Utils {
 		if (Build.MODEL.equals(Constants.MODEL_S3)) {
 			return true;
 		}
+		if (Build.MODEL.equals(Constants.MODEL_POCKET_NEO)) {
+            		return true;
+        	}
 		Log.i(LOG_TAG, "Model: " + Build.MODEL + " not supported");
 		return false;
 	}
