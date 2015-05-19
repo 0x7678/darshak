@@ -46,6 +46,7 @@ public class Application extends android.app.Application {
 		Utils.deleteLogFilesWithPrefix(new String[] {
 				Constants.LOG_FILE_S2_PREFIX,
 				Constants.LOG_FILE_S2_PREFIX_AENAES,
+				Constants.LOG_FILE_NEO_PREFIX,
 				Constants.LOG_FILE_S3_PREFIX, Constants.LOG_FILE_XGS_PREFIX });
 
 		Log.i(LOG_TAG, "application created");
